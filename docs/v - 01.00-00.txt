@@ -1,0 +1,65 @@
+IDEANOW- v01.00-00
+R1. O usuario devera poder cadastrar uma nova ideia.
+R2. O usuario devera poder listar as ideias.
+	- ao selecionar o botao view o sistema devera mostrar a lista de ideias cadastradas,
+		dados a serem exibidos name(autor da ideia) e date (data em que a ideia foi criada).
+	- ao selecionar uma ideia o sistema devera abrir um popup com a descricao da ideia.
+
+
+ARQUITETURA.
+1)projeto sera feito usando o modelo MVC
+2)pacotes:
+	br.com.ideanow.view --> regras que controlan telas (preenchimento dinamico de listas..,configuracoes de botoes).
+	br.com.ideanow.activity -->activity necessarias dentro da aplicacao.
+	br.com.ideanow.controler --> camada de controle pode invokar outros controladores ou enviar a requesicao para o banco.
+	br.com.ideanow.model --> simples entidades que representam as tabelas do banco.
+	br.com.ideanow.dao --> contem operacoes necessarias da aplicacao.
+	br.com.ideianow.util --> classes utilitarias durante o projeto.
+3) APIS:
+	nesta versão não será usado nenhuma api.
+4) Testes automatizados:
+	nesta versão não serão implantados testes automatizados.	
+5)ferramenta de qualidade de codigo:
+	nesta versão a validacao de codigo sera totalmente manual.
+
+Ferramentas:	
+1)Projeto sera feito usando o repositorio aberto GITHUB
+2)Eclipse com android instalado
+3)sera usada a ferramenta TRELLO para gerenciar as atividades.
+
+PROCESSO:
+1 - Pegar atividade (fazer tela,fazer controle)
+2 - Implementar
+3 - Enviar para outro implementador avaliar o codigo
+4 - Corrigir solicitacoes voltar ao passo 2
+5 - dar caso de uso como definido
+
+INICIO:  08/04/2015
+TERMINO: 08/05/2015
+Tempo estimado de cada desenvolvedor: segunda a sexta 1:30 por dia.
+
+ATIVIDADES:
+	Gerencia: Ao fim de cada atividade abaixo deverá ser disponibilizado um documento com passo a passo para que os demais programadores possam configurar seus ambientes.
+		1. configurar o ambiente no respositorio.
+		2. configurar eclipse
+		3. configurar plugin android
+		4. cadastrar pessoas/atividades na ferramenta trello
+
+	R1.Cadastrar nova ideia.
+		R1.1 preparar classes necessarias para salvar a entidade idea no banco.
+		R1.2 criar classe de controle
+		R1.3 criar tela 
+		R1.4 criar activitys necessarias para controle da tela
+		R1.5 implementar a juncao de todos os passos anteriores para o caso de uso
+		R1.6 testar a funcionalidade liberando versao para producao
+
+	R2.Listar ideias
+		R2.1 preparar metodos necesarios(DAO) para consultar todas as ideia no banco
+		R2.2 preparar metodos necesarios(DAO) para consultar apenas uma ideia no banco
+		R2.3 preparar controle
+		R2.4 preparar telas
+		R2.5 criar activitys necessarias para controle da tela
+		R2.6 implementar a juncao de todos os passos anteriores para o caso de uso
+		R2.7 testar a funcionalidade liberando versao para producao
+
+IDEIANOW-v02.00-00 .....
