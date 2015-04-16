@@ -1,8 +1,9 @@
 package com.brainstorm.dao;
 
-import com.brainstorm.dao.idea.Idea;
 
 public abstract class ColunmNames {
+	public static final String[] TABLE_IDEA_COLUNMS = new String[]{TableIdea.CD_IDEA.getColunmName(),TableIdea.DESCRIPTION.getColunmName()};
+	
 	public enum TableIdea{
 		CD_IDEA("cdidea"),
 		DESCRIPTION("description");

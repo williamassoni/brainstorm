@@ -1,16 +1,30 @@
 package com.brainstorm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.brainstorm.controller.IdeaController;
+
 
 public class MainActivity extends Activity {
-
+	private IdeaController controller;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        startActivity(new Intent(this,IdeaActivity.class));
+       // controller = new IdeaController(this);
+        
+       // Idea ideia = new Idea();
+		//ideia.setDescription("COMER PASTEL");
+		
+    	//controller.save(ideia);
+		//controller.findAllIdea();
+		
         setContentView(R.layout.activity_main);
     }
 

@@ -5,14 +5,14 @@ import java.io.Serializable;
 public class Idea implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	private Integer cdIdea;
+	private Long cdIdea;
 	private String description;
 
-	public Integer getCdIdea() {
+	public Long getCdIdea() {
 		return cdIdea;
 	}
 
-	public void setCdIdea(Integer cdIdea) {
+	public void setCdIdea(Long cdIdea) {
 		this.cdIdea = cdIdea;
 	}
 
