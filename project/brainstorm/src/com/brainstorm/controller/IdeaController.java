@@ -21,10 +21,10 @@ public class IdeaController {
 	 * */
 	public long save(Idea idea){
 		if(idea.getCdIdea() == null){
-			return this.repository.save(idea);
+			return this.repository.insert(idea);
 		}
 		
-		return 0;//TODO implement update idea
+		return this.repository.update(idea);
 	}
 	
 	/**

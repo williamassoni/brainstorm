@@ -28,36 +28,42 @@ public class IdeaRepository {
 		db = dbHelper.getWritableDatabase();
 	}
 	
-	public long save(Idea idea){
-		Long id = idea.getCdIdea();
-		
-		if(id==null ||id ==0){
-			return insertIntoIdea(idea);
-		}
-		//atualizar(carro);
-		return id;
-	}
-	
-	private long insertIntoIdea(Idea idea) {
+	public long insert(Idea idea){
 		ContentValues values = new ContentValues();
 		values.put(ColunmNames.TableIdea.DESCRIPTION.getColunmName(),idea.getDescription());
 		return db.insert("IDEA", "", values);
 	}
 	
+	public int update(Idea idea) {
+		ContentValues values = new ContentValues();
+		values.put(ColunmNames.TableIdea.DESCRIPTION.getColunmName(),idea.getDescription());
+		
+		String _id = String.valueOf(idea.getCdIdea());
+		String where = ColunmNames.TableIdea.CD_IDEA.getColunmName()+" = ? ";
+		String[] whereArgs = new String[]{_id};
+		
+		return db.update("IDEA", values, where, whereArgs);
+	}
+	
 	public List<Idea> findAllIdea() {
-		Cursor c = db.query("IDEA", ColunmNames.TABLE_IDEA_COLUNMS,null, null, null, null, null,null);
+		Cursor cursor = db.query("IDEA", ColunmNames.TABLE_IDEA_COLUNMS,null, null, null, null, null,null);
 		List<Idea> ideaList = new ArrayList<Idea>();
 		
-		if(c.moveToFirst()){
+		if(cursor.moveToFirst()){
 			do {
 				Idea idea = new Idea();
-				idea.setCdIdea(c.getLong(c.getColumnIndex(TableIdea.CD_IDEA.getColunmName())));
-				idea.setDescription(c.getString(c.getColumnIndex(TableIdea.DESCRIPTION.getColunmName())));
+				idea.setCdIdea(cursor.getLong(findColunmPosition(TableIdea.CD_IDEA,cursor)));
+				idea.setDescription(cursor.getString(findColunmPosition(TableIdea.DESCRIPTION,cursor)));
 
 				ideaList.add(idea);
-			} while (c.moveToNext());
+			} while (cursor.moveToNext());
 		}
 		
 		return ideaList;
 	}
+	
+	private int findColunmPosition(TableIdea colunmName,Cursor cursor){
+		return cursor.getColumnIndex(colunmName.getColunmName());
+	}
+	
 }

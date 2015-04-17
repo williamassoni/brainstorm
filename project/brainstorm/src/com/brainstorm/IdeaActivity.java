@@ -1,5 +1,7 @@
 package com.brainstorm;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,6 +22,13 @@ public class IdeaActivity extends Activity {
 		ideia.setDescription("COMER PASTEL");
 		
 		controller.save(ideia);
+		List<Idea> lista = controller.findAllIdea();
+		
+		Idea i = lista.get(0);
+		i.setDescription("Comer pastel de frango");
+		
+		controller.save(i);
+		
 		controller.findAllIdea();
 		setContentView(R.layout.activity_idea);
 	}
