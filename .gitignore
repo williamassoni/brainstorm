@@ -46,3 +46,4 @@ Temporary Items
 *.dex
 project/brainstorm/bin/**
 project/brainstorm/bin/brainstorm.apk
+*.class
