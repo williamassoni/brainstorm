@@ -15,14 +15,14 @@ import com.brainstorm.converter.IdeaConverter;
 import com.brainstorm.dao.idea.Idea;
 import com.brainstorm.view.IdeaListAdapter;
 
-public class IdeaActivity extends Activity {
+public class ListIdeaActivity extends Activity {
 	private IdeaController controller;
 	private ListView listView ;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_idea);
+		setContentView(R.layout.activity_list_idea);
 		
 		initializeObjects();
 		refreshView();
@@ -35,11 +35,11 @@ public class IdeaActivity extends Activity {
 	}
 	
 	private void refreshView(){
-		listView.setAdapter(new IdeaListAdapter(this,controller.findAllIdea()));		
+		this.listView.setAdapter(new IdeaListAdapter(this,controller.findAllIdea()));		
 	}
 
 	private void settingListners() {
-		listView.setOnItemClickListener(new OnItemClickListener() {
+		this.listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 				Idea idea = (Idea) listView.getAdapter().getItem(position);

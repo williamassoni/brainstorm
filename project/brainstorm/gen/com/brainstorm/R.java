@@ -31,7 +31,7 @@ public final class R {
         public static final int ideaList=0x7f080001;
     }
     public static final class layout {
-        public static final int activity_idea=0x7f030000;
+        public static final int activity_list_idea=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int idea_line=0x7f030002;
     }
