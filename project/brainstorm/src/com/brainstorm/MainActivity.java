@@ -17,15 +17,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         
         startActivity(new Intent(this,IdeaActivity.class));
-       // controller = new IdeaController(this);
+      //  controller = new IdeaController(this);
         
-       // Idea ideia = new Idea();
-		//ideia.setDescription("COMER PASTEL");
+      //  Idea ideia = new Idea();
+	//	ideia.setDescription("COMER PASTEL");
+	//	
+    //	controller.save(ideia);
+	//	controller.findAllIdea();
 		
-    	//controller.save(ideia);
-		//controller.findAllIdea();
-		
-        setContentView(R.layout.activity_main);
+     //   setContentView(R.layout.activity_main);
     }
 
 
