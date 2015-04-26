@@ -1,12 +1,15 @@
 package com.brainstorm;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,6 +21,8 @@ import com.brainstorm.view.IdeaListAdapter;
 public class ListIdeaActivity extends Activity {
 	private IdeaController controller;
 	private ListView listView ;
+	private Button btCadIdea;
+	private Context context = this;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class ListIdeaActivity extends Activity {
 	private void initializeObjects() {
 		this.controller = new IdeaController(this);
 		this.listView = (ListView) findViewById(R.id.ideaList);
+		this.btCadIdea = (Button) findViewById(R.id.btNewIdea);
 	}
 	
 	private void refreshView(){
@@ -46,6 +52,12 @@ public class ListIdeaActivity extends Activity {
 				Toast.makeText(getApplicationContext(),IdeaConverter.convertIdeaToString(idea),Toast.LENGTH_LONG).show();
 			}
 		});
+		
+		this.btCadIdea.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				startActivity(new Intent(context,CadIdeaActivity.class));
+			}
+         });
 	}
 	
 	@Override

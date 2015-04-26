@@ -7,5 +7,6 @@
     <string name="title_activity_save_idea">SaveIdeaActivity</string>
     <string name="title_activity_idea">IdeaActivity</string>
     <string name="title_activity_idea_list">IdeaListActivity</string>
+    <string name="title_activity_cad_idea">CadIdeaActivity</string>
 
 </resources>
